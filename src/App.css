@@ -1,19 +1,52 @@
+/*TYPOGRAPHY*/
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+html {
+  font-size: 62.5%;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 20em) {
+  html {
+    font-size: 50%;
+    font-weight: 700;
+  }
+}
+
+.body-xsm {
+  font-size: 1.3rem;
+}
+
+.body-sm {
+  font-size: 1.6rem;
+}
+
+.body-main {
+  font-size: 2.4rem;
+}
+
+.body-large {
+  font-size: 3.2rem;
+}
+
+/*VARIABLES*/
+:root {
+  --cyan-1: hsl(172, 67%, 45%);
+  --cyan-2: hsl(183, 100%, 15%);
+  --cyan-3: hsl(186, 14%, 43%);
+  --cyan-4: hsl(184, 14%, 56%);
+  --cyan-5: hsl(185, 41%, 84%);
+  --cyan-6: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+/*CSS RESET*/
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-@media screen and (max-width: 20em) {
-  html {
-    font-size: 50%;
-  }
 }
 
 body {
