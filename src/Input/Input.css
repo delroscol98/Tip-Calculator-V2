@@ -1,0 +1,30 @@
+.input {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.input__label {
+  color: var(--cyan-3);
+}
+
+.input__container {
+  position: relative;
+}
+
+.input__image {
+  position: absolute;
+  top: 50%;
+  transform: translate(150%, -50%);
+}
+
+.input__input {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--cyan-6);
+  text-align: right;
+  font-size: 2.4rem;
+  font-weight: inherit;
+  color: var(--cyan-2);
+}

@@ -1,7 +1,7 @@
 import "./Calculator.css";
 
-const Calculator = () => {
-  return <main className="calculator">TEST</main>;
+const Calculator = ({ children }) => {
+  return <main className="calculator">{children}</main>;
 };
 
 export default Calculator;
