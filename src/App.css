@@ -52,4 +52,19 @@ html {
 body {
   min-height: 100vh;
   box-sizing: border-box;
+  background-color: var(--cyan-5);
+}
+
+/*LOGO*/
+.logo {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 5rem;
+}
+
+@media screen and (min-width: 64em) {
+  .logo {
+    margin-top: 16.3rem;
+  }
 }
