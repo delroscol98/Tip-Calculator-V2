@@ -1,6 +1,6 @@
 import "./Input.css";
 
-const Input = ({ image, imageAlt, inputId, min }) => {
+const Input = ({ value, onChange, image, imageAlt, inputId, min }) => {
   return (
     <article className="input__container">
       <img className="input__image" src={image} alt={imageAlt} />
@@ -11,6 +11,8 @@ const Input = ({ image, imageAlt, inputId, min }) => {
         id={inputId}
         min={min}
         placeholder="0"
+        value={value}
+        onChange={onChange}
       />
     </article>
   );

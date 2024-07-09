@@ -1,52 +1,69 @@
 import "./Percentage.css";
 
 import Label from "../Label/Label";
+import Button from "../Button/Button";
 
-const Percentage = () => {
+const Percentage = ({
+  onSetPercentage,
+  customPercentage,
+  onSetCustomPercentage,
+}) => {
   return (
     <section className="percentage">
       <Label
         label="Select Tip %"
         inputId="percentage"
-        errMsg="Can't be less than zero"
+        errMsg={customPercentage < 0 && "Can't be less than zero"}
       />
       <section className="percentage__btn-container">
-        <input
+        <Button
           className="percentage__btn body-main"
-          type="button"
-          value="5%"
           id="percentage"
-        />
-        <input
+          value={5}
+          onClick={onSetPercentage}
+        >
+          5%
+        </Button>
+        <Button
           className="percentage__btn body-main"
-          type="button"
-          value="10%"
           id="percentage"
-        />
-        <input
+          value={10}
+          onClick={onSetPercentage}
+        >
+          10%
+        </Button>
+        <Button
           className="percentage__btn body-main"
-          type="button"
-          value="15%"
           id="percentage"
-        />
-        <input
+          value={15}
+          onClick={onSetPercentage}
+        >
+          15%
+        </Button>
+        <Button
           className="percentage__btn body-main"
-          type="button"
-          value="20%"
           id="percentage"
-        />
-        <input
+          value={20}
+          onClick={onSetPercentage}
+        >
+          20%
+        </Button>
+        <Button
           className="percentage__btn body-main"
-          type="button"
-          value="25%"
           id="percentage"
-        />
+          value={25}
+          onClick={onSetPercentage}
+        >
+          25%
+        </Button>
         <input
           className="percentage__input body-main"
           type="number"
           placeholder="Custom"
           id="percentage"
           min="0"
+          value={customPercentage}
+          onChange={onSetCustomPercentage}
         />
       </section>
     </section>

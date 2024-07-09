@@ -8,8 +8,32 @@ import Label from "./Label/Label";
 import Input from "./NumberInput/Input";
 import Percentage from "./Percentage/Percentage";
 import Summary from "./Summary/Summary";
+import Button from "./Button/Button";
+
+import { useState } from "react";
 
 function App() {
+  const [bill, setBill] = useState("");
+  const [percentage, setPercentage] = useState("");
+  const [customPercentage, setCustomPercentage] = useState("");
+  const [numPeople, setNumPeople] = useState("");
+
+  const setBillHandler = (e) => {
+    setBill(Number(e.target.value));
+  };
+
+  const setPercentageHandler = (e) => {
+    setPercentage(Number(e.target.value));
+  };
+
+  const setCustomPercentageHandler = (e) => {
+    setCustomPercentage(Number(e.target.value));
+  };
+
+  const setNumPeopleHandler = (e) => {
+    setNumPeople(Number(e.target.value));
+  };
+
   return (
     <>
       <svg
@@ -25,15 +49,25 @@ function App() {
       </svg>
       <Calculator>
         <NumberInput>
-          <Label label="Bill" inputId="Bill" errMsg="Can't be less than zero" />
+          <Label
+            label="Bill"
+            inputId="Bill"
+            errMsg={bill < 0 && "Please enter valid amount"}
+          />
           <Input
             image={dollar}
             image_alt="dollar icon"
             min="0"
             inputId="Bill"
+            onChange={setBillHandler}
+            value={bill}
           />
         </NumberInput>
-        <Percentage />
+        <Percentage
+          onSetPercentage={setPercentageHandler}
+          customPercentage={customPercentage}
+          onSetCustomPercentage={setCustomPercentageHandler}
+        />
         <NumberInput
           image={person}
           image_alt="person icon"
@@ -43,16 +77,25 @@ function App() {
           <Label
             label="Number of People"
             inputId="people"
-            errMsg="Can't be zero"
+            errMsg={numPeople < 0 && "Can't be zero"}
           />
           <Input
             image={person}
             image_alt="person icon"
             min="1"
             inputId="people"
+            onChange={setNumPeopleHandler}
+            value={numPeople}
           />
         </NumberInput>
-        <Summary />
+        <Summary>
+          <Button
+            className="summary__btn"
+            disabled={numPeople < 1 ? true : false}
+          >
+            RESET
+          </Button>
+        </Summary>
       </Calculator>
     </>
   );

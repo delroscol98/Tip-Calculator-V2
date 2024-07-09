@@ -36,6 +36,7 @@
 }
 
 .summary__details--text-sub {
+  display: inline;
   color: var(--cyan-4);
 }
 
@@ -56,9 +57,9 @@
   transition: background-color 0.2s;
 }
 
-/* .summary__btn:disabled {
+.summary__btn:disabled {
   background-color: #0d686d;
-} */
+}
 
 .summary__btn:hover {
   cursor: pointer;

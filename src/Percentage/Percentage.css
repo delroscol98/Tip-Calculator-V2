@@ -44,3 +44,7 @@
 .percentage__input:focus {
   outline: 2px solid var(--cyan-1);
 }
+
+.percentage__input:invalid {
+  outline: 2px solid #e17457;
+}
