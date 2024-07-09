@@ -1,3 +1,9 @@
 .label {
   color: var(--cyan-3);
+  display: flex;
+  justify-content: space-between;
+}
+
+.error-msg {
+  color: #e17457;
 }

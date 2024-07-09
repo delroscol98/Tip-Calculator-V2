@@ -1,9 +1,14 @@
+import "./App.css";
 import dollar from "./images/icon-dollar.svg";
 import person from "./images/icon-person.svg";
-import "./App.css";
+
 import Calculator from "./Calculator/Calculator";
-import Input from "./Input/Input";
+import NumberInput from "./NumberInput/NumberInput";
+import Label from "./Label/Label";
+import Input from "./NumberInput/Input";
 import Percentage from "./Percentage/Percentage";
+import Summary from "./Summary/Summary";
+
 function App() {
   return (
     <>
@@ -19,13 +24,35 @@ function App() {
         />
       </svg>
       <Calculator>
-        <Input image={dollar} image_alt="dollar icon" label="Bill" />
-        <Percentage label="Select Tip %" />
-        <Input
+        <NumberInput>
+          <Label label="Bill" inputId="Bill" errMsg="Can't be less than zero" />
+          <Input
+            image={dollar}
+            image_alt="dollar icon"
+            min="0"
+            inputId="Bill"
+          />
+        </NumberInput>
+        <Percentage />
+        <NumberInput
           image={person}
           image_alt="person icon"
           label="Number of People"
-        />
+          min="1"
+        >
+          <Label
+            label="Number of People"
+            inputId="people"
+            errMsg="Can't be zero"
+          />
+          <Input
+            image={person}
+            image_alt="person icon"
+            min="1"
+            inputId="people"
+          />
+        </NumberInput>
+        <Summary />
       </Calculator>
     </>
   );

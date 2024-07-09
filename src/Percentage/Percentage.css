@@ -19,6 +19,13 @@
   border-radius: 0.5rem;
 }
 
+.percentage__btn:hover,
+.percentage__btn.active {
+  cursor: pointer;
+  background-color: #9fe8df;
+  color: var(--cyan-2);
+}
+
 .percentage__input {
   width: 100%;
   font-family: "Space Mono", monospace;
