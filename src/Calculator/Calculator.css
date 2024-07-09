@@ -6,4 +6,14 @@
   border-top-right-radius: 2.5rem;
   display: grid;
   gap: 3.2rem;
+  width: min(100%, 92rem);
+}
+
+@media screen and (min-width: 57.5em) {
+  .calculator {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2.5rem;
+  }
 }
