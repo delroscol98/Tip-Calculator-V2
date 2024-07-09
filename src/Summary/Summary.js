@@ -11,7 +11,7 @@ const Summary = () => {
               / person
             </span>
           </p>
-          <p className="summary__details--number body-large">$10</p>
+          <p className="summary__details--number body-large">$0.00</p>
         </article>
         <article className="summary__details-container">
           <p className="summary__details--text body-sm">
@@ -20,7 +20,7 @@ const Summary = () => {
               / person
             </span>
           </p>
-          <p className="summary__details--number body-large">$10</p>
+          <p className="summary__details--number body-large">$0.00</p>
         </article>
       </section>
 

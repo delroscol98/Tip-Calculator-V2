@@ -2,10 +2,14 @@ import "./Percentage.css";
 
 import Label from "../Label/Label";
 
-const Percentage = ({ label }) => {
+const Percentage = () => {
   return (
     <section className="percentage">
-      <Label label="Select Tip %" inputId="percentage" />
+      <Label
+        label="Select Tip %"
+        inputId="percentage"
+        errMsg="Can't be less than zero"
+      />
       <section className="percentage__btn-container">
         <input
           className="percentage__btn body-main"
@@ -42,6 +46,7 @@ const Percentage = ({ label }) => {
           type="number"
           placeholder="Custom"
           id="percentage"
+          min="0"
         />
       </section>
     </section>

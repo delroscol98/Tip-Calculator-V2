@@ -4,14 +4,29 @@
   padding: 2.4rem;
 }
 
-.summary__details {
-  display: grid;
-  gap: 2rem;
+@media screen and (min-width: 57.5em) {
+  .summary {
+    display: grid;
+    padding: 4rem;
+    grid-row: 1 / 4;
+    grid-column: 2 / 3;
+  }
 }
 
 .summary__details-container {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+}
+
+.summary__details-container:last-child {
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 57.5em) {
+  .summary__details-container:last-child {
+    margin-top: 2.5rem;
+  }
 }
 
 .summary__details--text {
@@ -48,4 +63,10 @@
 .summary__btn:hover {
   cursor: pointer;
   background-color: hsl(173, 61%, 77%);
+}
+
+@media screen and (min-width: 57.5em) {
+  .summary__btn {
+    align-self: end;
+  }
 }
