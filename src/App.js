@@ -1,4 +1,5 @@
 import dollar from "./images/icon-dollar.svg";
+import person from "./images/icon-person.svg";
 import "./App.css";
 import Calculator from "./Calculator/Calculator";
 import Input from "./Input/Input";
@@ -18,8 +19,13 @@ function App() {
         />
       </svg>
       <Calculator>
-        <Input image={dollar} image_alt="dollar icon" />
+        <Input image={dollar} image_alt="dollar icon" label="Bill" />
         <Percentage label="Select Tip %" />
+        <Input
+          image={person}
+          image_alt="person icon"
+          label="Number of People"
+        />
       </Calculator>
     </>
   );
