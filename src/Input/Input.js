@@ -1,11 +1,11 @@
 import "./Input.css";
 
-const NumberInput = ({ label, image, imageAlt }) => {
+import Label from "../Label/Label";
+
+const Input = ({ label, image, imageAlt }) => {
   return (
     <article className="input">
-      <label className="input__label body-sm" htmlFor="bill">
-        {label}
-      </label>
+      <Label label="Bill" inputId="bill" />
       <article className="input__container">
         <img className="input__image" src={image} alt={imageAlt} />
         <input
@@ -13,6 +13,7 @@ const NumberInput = ({ label, image, imageAlt }) => {
           type="number"
           name="bill"
           id="bill"
+          min="0"
           placeholder="0"
         />
       </article>
@@ -20,4 +21,4 @@ const NumberInput = ({ label, image, imageAlt }) => {
   );
 };
 
-export default NumberInput;
+export default Input;

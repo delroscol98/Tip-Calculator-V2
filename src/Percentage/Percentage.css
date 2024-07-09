@@ -1,0 +1,31 @@
+.percentage {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.percentage__btn-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+}
+
+.percentage__btn {
+  height: 4.8rem;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  color: var(--white);
+  background-color: var(--cyan-2);
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.percentage__input {
+  width: 100%;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  text-align: center;
+  color: var(--cyan-2);
+  background-color: var(--cyan-6);
+  border: none;
+  border-radius: 0.5rem;
+}
