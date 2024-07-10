@@ -24,7 +24,7 @@ function App() {
 
   const setPercentageHandler = (e) => {
     setPercentage(Number(e.target.value));
-    setCustomPercentage(0);
+    setCustomPercentage("");
   };
 
   const setCustomPercentageHandler = (e) => {
@@ -87,6 +87,7 @@ function App() {
           />
         </NumberInput>
         <Percentage
+          percentage={percentage}
           onSetPercentage={setPercentageHandler}
           customPercentage={customPercentage}
           onSetCustomPercentage={setCustomPercentageHandler}
@@ -100,7 +101,9 @@ function App() {
           <Label
             label="Number of People"
             inputId="people"
-            errMsg={numPeople < 0 && "Can't be zero"}
+            errMsg={
+              String(numPeople) === "" || numPeople > 0 ? "" : "Can't be zero"
+            }
           />
           <Input
             image={person}
@@ -114,7 +117,7 @@ function App() {
         <Summary tipAmount={tipAmount} total={total} onClick={resetHander}>
           <Button
             className="summary__btn"
-            disabled={numPeople < 1 ? true : false}
+            disabled={numPeople <= 0 ? true : false}
             onClick={resetHander}
           >
             RESET

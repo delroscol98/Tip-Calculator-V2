@@ -4,6 +4,7 @@ import Label from "../Label/Label";
 import Button from "../Button/Button";
 
 const Percentage = ({
+  percentage,
   onSetPercentage,
   customPercentage,
   onSetCustomPercentage,
@@ -17,7 +18,9 @@ const Percentage = ({
       />
       <section className="percentage__btn-container">
         <Button
-          className="percentage__btn body-main"
+          className={`percentage__btn body-main ${
+            !customPercentage && percentage === 5 && "active"
+          }`}
           id="percentage"
           value={5}
           onClick={onSetPercentage}
@@ -25,7 +28,9 @@ const Percentage = ({
           5%
         </Button>
         <Button
-          className="percentage__btn body-main"
+          className={`percentage__btn body-main ${
+            !customPercentage && percentage === 10 && "active"
+          }`}
           id="percentage"
           value={10}
           onClick={onSetPercentage}
@@ -33,7 +38,9 @@ const Percentage = ({
           10%
         </Button>
         <Button
-          className="percentage__btn body-main"
+          className={`percentage__btn body-main ${
+            !customPercentage && percentage === 15 && "active"
+          }`}
           id="percentage"
           value={15}
           onClick={onSetPercentage}
@@ -41,7 +48,9 @@ const Percentage = ({
           15%
         </Button>
         <Button
-          className="percentage__btn body-main"
+          className={`percentage__btn body-main ${
+            !customPercentage && percentage === 20 && "active"
+          }`}
           id="percentage"
           value={20}
           onClick={onSetPercentage}
@@ -49,7 +58,9 @@ const Percentage = ({
           20%
         </Button>
         <Button
-          className="percentage__btn body-main"
+          className={`percentage__btn body-main ${
+            !customPercentage && percentage === 25 && "active"
+          }`}
           id="percentage"
           value={25}
           onClick={onSetPercentage}
