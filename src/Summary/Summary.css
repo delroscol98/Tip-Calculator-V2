@@ -54,7 +54,7 @@
   font-size: 2rem;
   font-weight: 700;
   margin-top: 3.2rem;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
 }
 
 .summary__btn:disabled {
@@ -69,6 +69,7 @@
 .summary__btn:hover {
   cursor: pointer;
   background-color: hsl(173, 61%, 77%);
+  transform: translateY(-4px);
 }
 
 @media screen and (min-width: 57.5em) {

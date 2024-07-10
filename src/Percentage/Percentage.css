@@ -17,6 +17,11 @@
   background-color: var(--cyan-2);
   border: none;
   border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.percentage__btn:hover {
+  transform: translateY(-4px);
 }
 
 .percentage__btn:hover,
@@ -35,6 +40,7 @@
   background-color: var(--cyan-6);
   border: none;
   border-radius: 0.5rem;
+  transition: all 0.2s;
 }
 
 .percentage__input:hover {
