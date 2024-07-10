@@ -61,6 +61,11 @@
   background-color: #0d686d;
 }
 
+.summary__btn:disabled:hover {
+  cursor: auto;
+  background-color: #0d686d;
+}
+
 .summary__btn:hover {
   cursor: pointer;
   background-color: hsl(173, 61%, 77%);

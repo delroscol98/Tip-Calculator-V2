@@ -24,15 +24,31 @@ function App() {
 
   const setPercentageHandler = (e) => {
     setPercentage(Number(e.target.value));
+    setCustomPercentage(0);
   };
 
   const setCustomPercentageHandler = (e) => {
     setCustomPercentage(Number(e.target.value));
+    setPercentage(0);
   };
 
   const setNumPeopleHandler = (e) => {
     setNumPeople(Number(e.target.value));
   };
+
+  const tipAmount =
+    numPeople > 0
+      ? percentage !== 0
+        ? (bill * percentage) / numPeople
+        : (bill * customPercentage) / numPeople
+      : 0;
+
+  const total =
+    numPeople > 0
+      ? percentage !== 0 && numPeople > 0
+        ? (bill + (bill * percentage) / 100) / numPeople
+        : (bill + (bill * customPercentage) / 100) / numPeople
+      : 0;
 
   return (
     <>
@@ -88,7 +104,7 @@ function App() {
             value={numPeople}
           />
         </NumberInput>
-        <Summary>
+        <Summary tipAmount={tipAmount} total={total}>
           <Button
             className="summary__btn"
             disabled={numPeople < 1 ? true : false}

@@ -1,6 +1,6 @@
 import "./Summary.css";
 
-const Summary = ({ children }) => {
+const Summary = ({ children, tipAmount, total }) => {
   return (
     <section className="summary">
       <section className="summary__details">
@@ -11,7 +11,9 @@ const Summary = ({ children }) => {
               / person
             </span>
           </p>
-          <p className="summary__details--number body-large">$0.00</p>
+          <p className="summary__details--number body-large">
+            ${tipAmount.toFixed(2)}
+          </p>
         </article>
         <article className="summary__details-container">
           <p className="summary__details--text body-sm">
@@ -20,7 +22,9 @@ const Summary = ({ children }) => {
               / person
             </span>
           </p>
-          <p className="summary__details--number body-large">$0.00</p>
+          <p className="summary__details--number body-large">
+            ${total.toFixed(2)}
+          </p>
         </article>
       </section>
 
