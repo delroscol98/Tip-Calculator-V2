@@ -14,7 +14,7 @@ import { useState } from "react";
 
 function App() {
   const [bill, setBill] = useState("");
-  const [percentage, setPercentage] = useState("");
+  const [percentage, setPercentage] = useState(0);
   const [customPercentage, setCustomPercentage] = useState("");
   const [numPeople, setNumPeople] = useState("");
 
@@ -36,11 +36,18 @@ function App() {
     setNumPeople(Number(e.target.value));
   };
 
+  const resetHander = () => {
+    setBill("");
+    setCustomPercentage("");
+    setPercentage(0);
+    setNumPeople("");
+  };
+
   const tipAmount =
     numPeople > 0
       ? percentage !== 0
-        ? (bill * percentage) / numPeople
-        : (bill * customPercentage) / numPeople
+        ? (bill * percentage) / 100 / numPeople
+        : (bill * customPercentage) / 100 / numPeople
       : 0;
 
   const total =
@@ -104,10 +111,11 @@ function App() {
             value={numPeople}
           />
         </NumberInput>
-        <Summary tipAmount={tipAmount} total={total}>
+        <Summary tipAmount={tipAmount} total={total} onClick={resetHander}>
           <Button
             className="summary__btn"
             disabled={numPeople < 1 ? true : false}
+            onClick={resetHander}
           >
             RESET
           </Button>
