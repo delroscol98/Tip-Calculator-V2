@@ -9,6 +9,12 @@
   gap: 1.6rem;
 }
 
+@media screen and (min-width: 57.5em) {
+  .percentage__btn-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .percentage__btn {
   height: 4.8rem;
   font-family: "Space Mono", monospace;
